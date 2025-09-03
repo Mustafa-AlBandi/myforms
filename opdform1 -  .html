@@ -1,0 +1,424 @@
+<!DOCTYPE HTML>
+<HTML><HEAD>
+<META content="text/html; charset=windows-1256" http-equiv=Content-Type>
+
+
+
+</HEAD>
+
+<style>
+body{
+  direction: rtl;
+}
+ p {margin-bottom: 0.2em;  margin-top: 0em;
+border: 2px solid lightgray ;border-radius: 20px; width:1000px; padding:10px;
+} 
+ 
+#dateBorder{margin-bottom: 0.2em;  margin-top: 0em;
+border: 2px solid lightgray ;border-radius: 20px; width:1000px; padding:10px;
+} 
+
+
+
+.sign{margin-bottom: 0.2em;  margin-top: 0em;
+border: 2px solid lightgray ;border-radius: 20px; width:1000px; height: 80px; padding:10px;
+} 
+
+  @media  print {
+  #printbtn{ 
+  display : none;
+}
+  #date-input{ 
+   visibility: hidden;
+}
+  .selectConsultans{
+      visibility: hidden;
+}
+  #File {
+      visibility: hidden;
+}   
+  .selectOpdtypetime{
+      visibility: hidden;
+}  
+  .selectOpdtime{
+      visibility: hidden;
+}
+  #result{
+      visibility: hidden;
+}
+  #diagnosis{
+      visibility: hidden;
+}
+} 
+ form {
+  font-size: 30px;
+  margin-top: 1em;
+  margin-right: 0.7em;
+  margin-left: 0.7em;
+  padding-left: 2px;
+  padding-right: 2px;
+}
+
+.bch{
+   background-color: lightgray;
+   border-radius: 20px;
+   padding:7px 1px 20px 1px;
+   font-family: strong, Charcoal, Segoe UI Semibold;
+   color:white;
+   font-size: 40px;
+   width:997px;
+   display: inline-block;
+   text-align: center;
+   text-shadow:4px 2px 2px #000000;
+}
+
+.title{
+   border: none;
+   background-color: lightgray;
+   padding:10px;
+   font-family: strong, Charcoal, Segoe UI Semibold;
+   width:980px;
+   display: inline-block;
+   text-align: center;
+   text-shadow:1px 2px 20px #000000;
+   hight:33px;
+
+}
+#BorderDivide {  
+  padding:10px;  
+  background-color: gray;  
+  border: 1px solid gray;        
+  width:1000px;
+}
+
+
+label{
+   border-radius: 20px;
+   background-color: lightgray;
+   padding: 14px 1px 20px 1px;
+   font-family: strong, Charcoal, Segoe UI Semibold;
+   width:188px;
+   display: inline-block;
+   text-align: center;
+   text-shadow:1px 1px 48px #455050;
+}
+
+
+.signlabel{
+   border-radius: 20px;
+   background-color: lightgray;
+   padding: 18px 1px 22px 1px;
+   font-family: strong, Charcoal, Segoe UI Semibold;
+   width:188px;
+   display: inline-block;
+   text-align: center;
+   text-shadow:1px 1px 48px #455050;
+  margin-top: 0.-2em;
+}
+.labelOpdtypetime{
+   border: none;
+   background-color: lightgray;
+   padding: 8px;
+   font-family: strong, Charcoal, Segoe UI Semibold;
+   width:120px;
+   display: inline-block;
+}
+
+.selectConsultans {
+   width:425px;
+   border: none;
+   padding-top:1px;
+   font-size: 35px;
+   position: relative;
+   top: -12px;
+
+}
+
+.selectOpdtypetime {
+   width:195px;
+   display: inline-block;
+   text-align: center;
+   border: none;
+   font-family: strong, Charcoal, Segoe UI Semibold;
+   font-size: 35px;
+ 
+position: relative;
+  top: -12px;
+}
+.selectOpdtime {
+   width:195px;
+   display: inline-block;
+   text-align: center;
+   border: none;
+   font-family: strong, Charcoal, Segoe UI Semibold;
+   font-size: 35px;
+  
+
+}
+select {
+   border: none;
+   outline: none;
+   scroll-behavior: smooth;
+   font-size: 45px;
+   font-family: strong, Charcoal, Segoe UI Semibold;
+   padding: 8px;
+   width:380px;
+   display: inline-block;
+  
+}
+
+
+.impact input[type="date"], .impact input[type="time"] {
+   font-family: Impact, Charcoal, sans-serif;
+   font-size: 110px;
+
+   color: white;
+
+
+}
+
+
+input {
+   border: none;
+   color:white;
+   outline: none;
+   scroll-behavior: smooth;
+   font-size: 10px;
+   text-align: center;
+   width:425px;
+
+}
+
+#result {
+   font-family: strong, Charcoal, Segoe UI Semibold;
+   width:420px;
+   font-size: 40px;
+   text-align: center;
+   margin-top: 0.3em;
+   margin-right: 1.2em;
+   display: inline-block;
+   position: absolute;
+   background: white;
+   width:370px;
+
+
+}
+
+
+
+#File {  
+  font-size: 40px;  
+  font-family: strong, Charcoal, Segoe UI Semibold;
+color:black;
+}
+
+#diagnosis{
+  font-size: 40px;  
+  font-family: strong, Charcoal, Segoe UI Semibold;
+  color:black;
+}
+
+#clearFile{ blue:white;
+   text-shadow:2px 2px 10px #000000;
+   font-size: 35px;
+   padding:10px;
+   border-radius: 20px;
+margin-right: 8.2em;
+}
+
+#printbtn{ blue:white;
+   text-shadow:2px 2px 10px #000000;
+   font-size: 35px;
+
+   width:295px;
+padding:20px 40px;
+ border-radius: 20px;
+}
+
+
+#changecolorbutton{ blue:white;
+   text-shadow:2px 2px 10px #000000;
+   font-size: 35px;
+   padding:10px;
+   width:150px;
+padding:20px 40px;
+ border-radius: 20px;
+}
+/* The container checkbox*/
+      
+
+ input.largerCheckbox{
+     width: 65px;
+     height: 40px;
+display: inline-block;
+margin-right: 27em;
+margin-top: 1.99em;
+position: absolute;
+}
+
+.square {
+  height: 67px;
+  width: 67px;
+  background-color: #555;
+position: absolute;
+margin-right: 16em;
+}
+
+#displayDateTime {
+   font-family: strong, Charcoal, Segoe UI Semibold;
+   font-size: 20px;
+   text-align: center;
+   margin-top: -4.7em;
+   margin-right: 44em;
+   display: inline-block;
+   position: absolute;
+   background: white;
+   border: 2px solid lightgray
+   padding: 4px;
+   width:100px;
+}
+
+
+
+
+</style>
+
+<body>
+
+   <form action="#" autocomplete="off">
+   <p>
+     <label class="bch">مستشفى بريدة المركزي</label>    
+      </p>
+
+<form action="#">
+ <p>
+     <label class="title"> نموذج تحويل لعيادة العظام ...... Orthopedic OPD referal form</label>    
+     </p>
+
+ <p id="BorderDivide"></p>
+
+     <p>
+     <label>رقم الملف: </label>    
+     <input type="text" id="File" placeholder="...رقم الملف..."  onkeypress='return event.charCode >= 48 && event.charCode <= 57'></input>
+
+
+   </p>
+<p>
+<label>التشخيص</label> 
+<input type="text" id="diagnosis" placeholder="...التشخيص..."/> 
+</p>
+<p>
+      <label for="consultans">عيادة ألإستشاري</label>
+     <select class="selectConsultans" id="consultans">
+        <option value="" disabled selected hidden>...العيادة...</option>
+        <option value="أكرم طه">أكرم طه</option>
+        <option value="عدنان شريط">عدنان شريط</option>
+        <option value="رزفي">رزفي</option>
+        <option value="محمد التلباني">محمد التلباني</option>
+        <option value="محمد نبوي">محمد نبوي</option>
+</select>
+
+     <label class="labelOpdtypetime">نوع العيادة</label>
+     <select class="selectOpdtypetime" id="opdtype">
+       <option value="" disabled selected hidden>...إختر...</option>
+       <option value="الإصابات">الإصابات</option>
+       <option value="ألإستشاري">ألإستشاري</option> 
+</select>
+</p>
+
+<form action="#">
+
+<div id="dateBorder">
+<div class="square"></div>
+ <label for="labelOpdtypetime"تاريخ الموعد">تاريخ الموعد:</label>
+
+ <div id="result"></div>	
+
+ <input style="font-size: 40px;" type="date" id="date-input" value="" placeholder="تاريخ الموعد">
+
+     <label class="labelOpdtypetime">الوقت</label>
+     <select class="selectOpdtime" id="Opdtime">
+       <option value="" disabled selected hidden>...الوقت...</option>
+       <option value="صباحا">صباحا</option>
+       <option value="مساء">مساء</option>
+</select>
+</div>
+
+<p class="sign">
+
+<label class="signlabel">توقيع الطبيب</label> 
+</p>
+ <p id="displayDateTime">
+</p>
+<p>
+<button id ="printbtn" type="button" onclick="window.print()">طباعة نموذج فارغ</button>
+
+<button type="button" id="changecolorbutton" onclick="changeColor()">طباعة</button>
+
+ <input type="checkbox" id="myCheck" class="largerCheckbox" name="checkBox2" 
+  onclick="myCheckboxFunction()">
+
+<label for="myCheck" style="width: 256px; padding:20px 40px; text-align: right;">طباعة نموذج فارغ</label>
+
+
+</p>
+
+
+</form>
+
+
+
+ <script>
+
+    let input = document.getElementById("date-input");
+    input.addEventListener("change", function () {
+    let selectedDate = new Date(input.value);
+      const result = document.getElementById("result");
+      result.innerHTML = selectedDate.toLocaleString(
+        "ar-US",
+        {
+          weekday: "long",
+          year: "numeric",
+          month: "numeric",
+          day: "numeric",
+        }
+      );
+    });
+
+var idds = ['File','diagnosis','Opdtime',];
+var ids = ['consultans','opdtype','File','result'];
+function changeColor() {
+        for (var i = 0; i < ids.length; i++) {
+        document.getElementById(ids[i]).style.color='white';  
+        document.getElementById(idds[i]).value='';
+        document.getElementById(idds[i]).style.color='white'; 
+   
+}
+}
+
+
+
+function myCheckboxFunction() {
+  var checkBox = document.getElementById("myCheck");
+  var consultans = document.getElementById("consultans");
+  if (checkBox.checked == true){
+    consultans.style.color='Blue';  
+  } else {
+     consultans.style.color='red'; 
+  }
+}
+
+  
+
+  var today = new Date();
+  var day = today.getDay();
+  var daylist = ["الأحد","ألإثنين","الثلاثاء","الإربعاء","الخميس","الجمعة","السبت"];
+  var date = today.getFullYear()+'-'+(today.getMonth()+1)+'-'+today.getDate();
+  var time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
+  var dateTime = date;
+  document.getElementById("displayDateTime").innerHTML = daylist[day] +' <br>' +dateTime;
+
+</script>
+</body>
+
+</html>
