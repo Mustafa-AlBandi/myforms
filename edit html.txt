@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Live Editable Text (GitHub + Firebase)</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 40px;
+      background-color: #f5f5f5;
+    }
+
+    .editable-box {
+      border: 2px dashed #888;
+      padding: 20px;
+      min-height: 150px;
+      background-color: #fff;
+    }
+
+    .note {
+      color: #555;
+      font-size: 14px;
+      margin-top: 10px;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Online Editable Text</h1>
+
+  <div id="editor" class="editable-box" contenteditable="true">
+    Loading...
+  </div>
+
+  <p class="note">✅ Your edits are saved online using Firebase and hosted on GitHub Pages.</p>
+
+  <!-- Firebase SDK -->
+  <script src="https://www.gstatic.com/firebasejs/10.5.0/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.5.0/firebase-firestore-compat.js"></script>
+
+  <script>
+// For Firebase JS SDK v7.20.0 and later, measurementId is optional
+const firebaseConfig = {
+  apiKey: "AIzaSyBKdVFSObRG_BPTkaKJanEH9sRxDUxFdGs",
+  authDomain: "editablefile-b6af7.firebaseapp.com",
+  projectId: "editablefile-b6af7",
+  storageBucket: "editablefile-b6af7.firebasestorage.app",
+  messagingSenderId: "789226906813",
+  appId: "1:789226906813:web:128790a5de98be2d30c3d4",
+  measurementId: "G-KE7TR15Y1Y"
+};
+
+    // Initialize Firebase
+    firebase.initializeApp(firebaseConfig);
+    const db = firebase.firestore();
+
+    const editor = document.getElementById("editor");
+    const docRef = db.collection("pages").doc("main");
+
+    // Load saved content from Firestore
+    docRef.get().then((doc) => {
+      if (doc.exists) {
+        editor.innerHTML = doc.data().content || "Start typing here...";
+      } else {
+        editor.innerHTML = "Start typing here...";
+      }
+    });
+
+    // Save changes in real-time
+    editor.addEventListener("input", () => {
+      docRef.set({ content: editor.innerHTML });
+    });
+  </script>
+
+</body>
+</html>
